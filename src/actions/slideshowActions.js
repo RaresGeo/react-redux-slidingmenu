@@ -6,5 +6,5 @@ const goTo = (index) => {
 }
 
 export default {
-    goTo
+    goTo,
 }

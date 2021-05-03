@@ -31,14 +31,32 @@
     transform: translateX(-50%);
     z-index: 100;
     text-align: center;
+    width: 20%;
 }
 
 .slideshowDot {
+    transform: translateY(-50%);
     display: inline-block;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     border-radius: 50%;
     cursor: pointer;
-    margin: 15px 7px 0px;
-    background-color: grey;
+    margin: 0;
+    background-color: white;
+    transition: border, background-color;
+    transition: ease-in-out .3s
+}
+
+.slideshowDot:hover {
+    margin: 0 10px;
+    height: 35px;
+    width: 35px;
+}
+
+.slideshowDot.selected {
+    height: 35px;
+    width: 35px;
+    margin: 0 5px;
+    border: solid 2px black;
+    cursor: initial;
 }
