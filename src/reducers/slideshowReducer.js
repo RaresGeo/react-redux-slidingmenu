@@ -1,5 +1,5 @@
 const initialState = {
-    index: 0
+    index: [0, 0]
 }
 
 const page = (state = initialState, action) => {

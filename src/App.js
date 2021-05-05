@@ -1,11 +1,11 @@
 import Slideshow from './components/Slideshow'
 
 
-const App = () => {
+const App = ({matrix}) => {
 
   return (
     <>
-      <Slideshow/>
+      <Slideshow matrix={matrix}/>
     </>
   );
 }

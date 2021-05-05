@@ -1,39 +1,28 @@
 import { useSelector, useDispatch } from 'react-redux'
 import actions from '../actions'
-import Slide from './Slide'
-import '../componentscss/Slideshow.css';
-import '../componentscss/flex.css';
+import SlideshowRow from '../components/SlideshowRow'
+import '../styles/Slideshow.css';
+import '../styles/flex.css';
 
-const Slideshow = () => {
 
-    const colors = ["red", "yellow", "blue"];
 
-    const index = useSelector(state => state.slideshow.index)
-    const dispatch = useDispatch()
+function Slideshow({matrix}) {
 
-    return (
-        <div className="slideshow">
+  const index = useSelector(state => state.slideshow.index)
+
+  return (
+    <div className="slideshow">
         <div
-          className="visibleSlide"
-          style={{ transform: `translateX(${-index * 100}%)` }}
+            className="visible-slide"
+            style={{ transform: `translate(${-index[0] * 100}%, ${-index[1] * 100}%)` }}
         >
-          {colors.map((backgroundColor, i) => (
-            <Slide key={i} colour={backgroundColor}/>
-          ))}
-        </div>
-
-        <div className="slideshowMenu flex space-evenly">
-            {colors.map((backgroundColor, i) => (
-                <div
-                key={i}
-                style={ index !== i ? {backgroundColor} : {} }
-                className={`slideshowDot${ i === index ? ' selected' : ''}`}
-                onClick={() => dispatch(actions.slideshowActions.goTo(i))}
-                ></div>
+            {matrix.map((colors, i) => (
+                <SlideshowRow key={i} rowNumber={i} numberOfRows={matrix.length} colors={colors}/>
             ))}
         </div>
-      </div>
-    )
+    </div>
+  );
 }
 
 export default Slideshow
+
