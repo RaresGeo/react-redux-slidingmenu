@@ -7,33 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from './store'
 
-const generateColour = () => {
-  let newColour = []
-  for(let i = 0; i < 3; i ++) {
-    newColour.push(Math.floor((Math.random() * 255) + 1))
-  }
-  return newColour
-}
-
-const columns = 3
-const rows = 3
-
-let matrix = []
-
-for(let i = 0; i < rows; i ++) {
-  let newRow = []
-  for(let j = 0; j < columns; j ++) {
-    let newColumn = generateColour()
-    newRow.push('(' + newColumn.join(',') + ')')
-  }
-  matrix.push(newRow)
-}
-
-
 ReactDOM.render(
   <Provider store={store}>
   <React.StrictMode>
-    <App matrix={matrix}/>
+    <App />
   </React.StrictMode>
   </Provider>,
   document.getElementById('root')

@@ -7,6 +7,7 @@
 .slideshow-row {
     display: inline-block;
     white-space: nowrap;
+    max-height: 100vh;
 }
 
 .visible-slide {
@@ -21,7 +22,7 @@
     display: inline-block;
     height: 100vh;
     width: 100vw;
-    border-radius: 15%;
+    top: 0;
 }
 
 .btn {
@@ -89,16 +90,4 @@
     bottom: 2.5rem;
     right: 2.5rem;
     transform: rotate(-45deg);
-}
-
-h1 {
-    color: rgb(40, 35, 40);
-    text-align: center;
-    font-size: 6vmax;
-    line-height: 100vh;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica;
-    border: 1px solid black;
 }
