@@ -1,6 +1,11 @@
 const initialState = {
-    user: {},
-    repos: []
+    user: {
+        fetched: false,
+    },
+    repos: {
+        list: [],
+        fetched: false,
+    },
 }
 
 const data = (state = initialState, action) => {
@@ -8,12 +13,12 @@ const data = (state = initialState, action) => {
         case "USER":
             return {
                 ...state,
-                user: action.user,
+                user: action.payload,
             };
         case "REPOS":
             return {
                 ...state,
-                repos: action.repos,
+                repos: action.payload,
             };
         default:
             return state

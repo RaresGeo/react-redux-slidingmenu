@@ -22,7 +22,6 @@ const SlideshowRow = ({rowNumber, matrix, components}) => {
             const addArrow = (grid, _class, coordinates) => {
                 let x = coordinates[0]
                 let y = coordinates[1]
-                console.log(grid)
                 if(typeof grid[x] === 'undefined') return
                 if(typeof grid[x][y] === 'object') {
                     arrows.push({

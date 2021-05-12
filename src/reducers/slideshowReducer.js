@@ -7,7 +7,7 @@ const page = (state = initialState, action) => {
         case "GOTO":
             return {
                 ...state,
-                index: action.index
+                index: action.payload
             };
         default:
             return state

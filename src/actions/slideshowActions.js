@@ -1,7 +1,7 @@
 const goTo = (index) => {
     return {
         type: "GOTO",
-        index: index
+        payload: index
     }
 }
 

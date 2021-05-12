@@ -12,7 +12,7 @@
 
 .profile {
     min-width: 30%;
-    background-color: rgb(20, 20, 25);
+    background-color: rgb(3, 4, 5);
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
 }
@@ -55,13 +55,15 @@
 /* Repos */
 
 .repos {
-    background-color: rgb(10, 10, 15);
+    border: solid rgb(98, 90, 80) 0px;
+    border-left-width: 5px;
+    background-color: rgb(2, 2, 3);
     overflow: auto;
 }
 
 .repo {
     width: 40%;
-    border: 5px solid rgb(20, 20, 25);
+    border: 5px solid rgb(98, 90, 80);
     margin: 3rem;
 }
 

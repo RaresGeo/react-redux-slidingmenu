@@ -1,14 +1,20 @@
 const getUser = (user) => {
     return {
         type: "USER",
-        user: user,
+        payload: {
+            ...user,
+            fetched: true,
+        },
     }
 }
 
 const getRepos = (repos) => {
     return {
         type: "REPOS",
-        repos: repos,
+        payload: {
+            list: repos,
+            fetched: true,
+        }
     }
 }
 

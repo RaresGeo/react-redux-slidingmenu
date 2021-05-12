@@ -53,7 +53,7 @@
 .top {
     top: 1rem;
     left: 50%;
-    transform: translateX(-100%) rotate(180deg);
+    transform: translateX(-50%) rotate(180deg);
 }
 
 .top-right {
@@ -83,7 +83,7 @@
 .bot {
     bottom: 1rem;
     left: 50%;
-    transform: translateX(-100%);
+    transform: translateX(-50%);
 }
 
 .bot-right {
