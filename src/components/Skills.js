@@ -1,20 +1,26 @@
-import { useSelector } from 'react-redux'
 import { Fragment } from 'react'
+import { useSelector } from 'react-redux'
+import { compareArray } from '../utility'
 
-import '../styles/flex.css';
-import '../styles/Github.css';
 import '../styles/styles.css';
-import '../styles/skills.css';
-import React from 'react';
+import '../styles/flex.css';
+import styles from '../styles/skills.module.css';
 
-const Skills = () => {
+import Skill from './subcomponents/Skill'
+import Fade from './Fade'
+import PropTypes from 'prop-types'
+
+
+const Skills = ({position}) => {
 
     const skills = useSelector(state => state.skills.skills)
+    const index = useSelector(state => state.slideshow.index)
+
 
     let skillKeys = Object.keys(skills)
     skillKeys.pop()
 
-    const style = {
+    const heightStyle = {
         maxHeight: `${100 / (skillKeys.length)}%`
     }
 
@@ -32,27 +38,17 @@ const Skills = () => {
 
     return (
         <div className="container flex space-around items-center">
-            <div className="skills flex-col center">
+            <div className={`${styles.skills} flex-col center bg-black fade-parent-skills`}>
                     {
                         skills.fetched ? (
                             skillKeys.map( (skill, i) => {
                                 return (
                                     <Fragment key={i}>
                                         {i > 0 && <hr />}
-                                        <div
-                                        className="skills-row flex flex-start items-center"
-                                        style={style}
-                                        >
-                                            <div className="skills-header"><h1>{parseKeyToString(skill)}</h1></div>
-                                            <div className="skill-list flex-col center flex-wrap">
-                                                {
-                                                skills[skill].map((element, i) => (
-                                                    <p key={i}>{element}</p>
-                                                ))
-                                                }
-                                            </div>
-                                        </div>
-                                    </ Fragment>
+                                        <Fade index={i} isVisible={compareArray(position, index)}>
+                                            <Skill skillHeader={parseKeyToString(skill)} skills={skills[skill]} style={heightStyle} index={i}/>
+                                        </Fade>
+                                    </Fragment>
                                 )
                             })
                         ) : (
@@ -62,6 +58,10 @@ const Skills = () => {
             </div>
         </div>
     )
+}
+
+Skills.propTypes = {
+    position: PropTypes.array,
 }
 
 export default Skills

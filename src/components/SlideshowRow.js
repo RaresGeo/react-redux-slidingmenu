@@ -31,14 +31,21 @@ const SlideshowRow = ({rowNumber, matrix, components}) => {
                 }
             }
 
-            addArrow(matrix, 'top', [rowNumber - 1, i])
-            addArrow(matrix, 'top-left', [rowNumber - 1, i - 1])
-            addArrow(matrix, 'top-right', [rowNumber - 1, i + 1])
-            addArrow(matrix, 'mid-left', [rowNumber, i - 1])
-            addArrow(matrix, 'mid-right', [rowNumber, i + 1])
-            addArrow(matrix, 'bot', [rowNumber + 1, i])
-            addArrow(matrix, 'bot-left', [rowNumber + 1, i - 1])
-            addArrow(matrix, 'bot-right', [rowNumber + 1, i + 1])
+            let arrowEnum = [
+                ['top', [rowNumber - 1, i]],
+                ['top-left', [rowNumber - 1, i - 1]],
+                ['top-right', [rowNumber - 1, i + 1]],
+                ['mid-left', [rowNumber, i - 1]],
+                ['mid-right', [rowNumber, i + 1]],
+                ['bot', [rowNumber + 1, i]],
+                ['bot-left', [rowNumber + 1, i - 1]],
+                ['bot-right', [rowNumber + 1, i + 1]]
+            ]
+
+            for(let arrow of arrowEnum) {
+                addArrow(matrix, arrow[0], arrow[1])
+            }
+            
 
             return <Slide component={typeof component === 'object' && component} key={i} arrows={arrows}/>
           })}

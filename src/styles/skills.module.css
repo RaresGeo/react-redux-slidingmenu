@@ -2,7 +2,6 @@
     width: 90%;
     height: 75%;
     margin: 0 auto;
-    background: rgb(2, 2, 3);
 }
 
 .skills hr {
@@ -10,7 +9,7 @@
     padding: 0 50px;
 }
 
-.skills-header {
+.skillsHeader {
     flex-grow: 1;
     max-width: 50%;
     height: 100%;
@@ -18,45 +17,44 @@
     align-items: center;
 }
 
-.skills-header h1 {
+.skillsHeader h1 {
     margin: 0 2rem;
     white-space: normal;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
-    color: rgb(195, 195, 195)
+    color: var(--lightgrey);
 }
 
-.skills-row {
+.skillsRow {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-.skills-row:hover {
-    background: rgb(8, 9, 10);
+.skillsRow:hover {
+    background: rgba(255, 255, 255, 0.01);
 }
 
-.skills-col {
+.skillsCol {
     float: left;
     padding: 0;
     margin: 0;
     height: 100%;
-    background-color: #222;
 }
 
-.skill-list {
+.skillList {
     flex-grow: 1;
     min-width: 50%;
     height: 100%;
     padding: 2rem;
 }
 
-.skill-list p {
+.skillList p {
     padding: 0.5rem 1rem;
     padding-left: .1em;
     font-family: 'Roboto', serif;
+    color: var(--teal);
     font-size: 1.15vmax;
-    color: rgb(60, 115, 140);
     margin: 0;
     padding: 0;
     -webkit-transition-property: padding;
@@ -70,9 +68,9 @@
     transition-timing-function: ease-in-out;
 }
 
-.skill-list p::before {
+.skillList p::before {
     content: "-";
     margin-left: -1em;
     position: absolute;
-    color: rgb(60, 115, 140);
+    color: inherit;
 }

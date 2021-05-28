@@ -1,10 +1,146 @@
+/* VARS */
+
+:root {
+    --black: #0B0C10;
+    --lightblack: #0f1014;
+    --grey: #1F2833;
+    --lightgrey: #C5C6C7;
+    --teal: #66FCF1;
+    --darkteal: #45A29E;
+}
+
+
+/* COLOURS */
+
+.black {
+    color: var(--black);
+}
+
+.lightblack {
+    color: var(--lightblack);
+}
+
+.grey {
+    color: var(--grey);
+}
+
+.lightgrey {
+    color: var(--lightgrey);
+}
+
+.teal {
+    color: var(--teal);
+}
+
+.darkteal {
+    color: var(--darkteal);
+}
+
+
+/* BACKGROUND COLOURS */
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-lightblack {
+    background-color: var(--lightblack);
+}
+
+.bg-grey {
+    background-color: var(--grey);
+}
+
+.bg-lightgrey {
+    background-color: var(--lightgrey);
+}
+
+.bg-teal {
+    background-color: var(--teal);
+}
+
+.bg-darkteal {
+    background-color: var(--darkteal);
+}
+
+
+/* USEFUL CLASSES */
+
 .loading {
     color: #999;
     text-align: center;
     font-size: 6vmax;
     line-height: auto;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-family: Helvetica;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.link {
+    color: var(--darkteal);
+    text-decoration: none;
+}
+
+.link::after {
+    content: '';
+    z-index: 5;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0%;
+    width: 0;
+    height: 3px;
+    background: var(--darkteal);
+    transition: width .3s;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+
+/* ANIMATIONS */
+
+.fade-invisible {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+}
+
+.fade-in-and-up {
+    opacity: 0;
+    animation-name: fade-in-and-up;
+    -webkit-animation-name: fade-in-and-up;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: .25s;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-delay: .25s;
+}
+
+@keyframes fade-in-and-up {
+    from {
+        transform: translate3d(0, 40px, 0)
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fade-in-and-up {
+    from {
+        transform: translate3d(0, 40px, 0)
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
 }

@@ -7,11 +7,7 @@ import '../styles/Slideshow.css';
 const Slide = ({component, arrows}) => {
 
     const dispatch = useDispatch()
-
-    //addArrow('top-left', [position[0] - 1, position[1] - 1])
-    //addArrow('top-right', [position[0] - 1, position[1] + 1])
-    //addArrow('bot', [position[0] - 1, position[1]])
-
+    
     return (
         <div
             className="slide"

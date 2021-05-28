@@ -5,6 +5,8 @@ import actions from './actions'
 import Github from './components/Github'
 import Skills from './components/Skills'
 
+import './styles/styles.css';
+
 
 const App = () => {
 
@@ -44,7 +46,7 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  let matrix = [['', Github(), ''], [Github(), Skills(), Github()], ['', Github(), '']]
+  let matrix = [['', Github({position:[0,1]}), ''], ['', Skills({position:[1,1]}), ''], ['', '', '']]
 
   return (
       <Slideshow matrix={matrix}/>
