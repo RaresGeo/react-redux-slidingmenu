@@ -1,6 +1,6 @@
 import '../../styles/styles.css';
 import '../../styles/flex.css';
-import styles from '../../styles/skills.module.css';
+import styles from '../../styles/Skills.module.css';
 
 import PropTypes from 'prop-types'
 

@@ -67,7 +67,7 @@
 /* USEFUL CLASSES */
 
 .loading {
-    color: #999;
+    color: var(--lightgrey);
     text-align: center;
     font-size: 6vmax;
     line-height: auto;
@@ -94,15 +94,94 @@
     display: block;
     position: relative;
     top: 0;
-    left: 0%;
-    width: 0;
+    right: 0%;
+    width: 0%;
     height: 3px;
     background: var(--darkteal);
     transition: width .3s;
+    animation: unhighlight-link 0.4s 1;
 }
 
 .link:hover::after {
+    animation: highlight-link 0.4s 1;
     width: 100%;
+}
+
+@keyframes highlight-link {
+    0% {
+        left: 0%;
+        width: 0%;
+    }
+    100% {
+        left: 0%;
+        width: 100%;
+    }
+}
+
+@keyframes unhighlight-link {
+    0% {
+        left: 0%;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 0%;
+    }
+}
+
+.click-copy {
+    text-decoration: none;
+    color: var(--darkteal);
+    position: relative;
+}
+
+.click-copy::after {
+    z-index: 5;
+    content: 'Click to copy';
+    border-top: var(--darkteal) 2px solid;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    color: var(--darkteal);
+}
+
+.click-copy::before {
+    z-index: 6;
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 110%;
+    left: 0%;
+    background: rgb(6, 7, 6);
+    animation: hide-text 0.4s 1;
+}
+
+.click-copy:hover::before {
+    animation: show-text 0.4s 1;
+    left: 100%;
+}
+
+@keyframes show-text {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes hide-text {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
 }
 
 

@@ -1,0 +1,33 @@
+.home {
+    box-sizing: border-box;
+    padding: 1% 7%;
+    z-index: 1;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--lightgrey);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.home h1,
+.home h2 {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    font-family: Helvetica;
+    color: var(--lightgrey);
+    white-space: pre;
+}
+
+.home h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 6vmin;
+}
+
+.home h2 {
+    font-weight: lighter;
+    font-size: 2vmin;
+}

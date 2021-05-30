@@ -2,8 +2,11 @@ import Slideshow from './components/Slideshow'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import actions from './actions'
+
 import Github from './components/Github'
+import Home from './components/Home'
 import Skills from './components/Skills'
+import Contact from './components/Contact'
 
 import './styles/styles.css';
 
@@ -46,7 +49,7 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  let matrix = [['', Github({position:[0,1]}), ''], ['', Skills({position:[1,1]}), ''], ['', '', '']]
+  let matrix = [[Github({position:[0,0]}), Home({position:[0,1]}), Skills({position:[0,2]})], ['', Contact({position:[1,1]}), '']]
 
   return (
       <Slideshow matrix={matrix}/>

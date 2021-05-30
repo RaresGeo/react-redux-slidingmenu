@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
 
 const initialState = {
-    slideshow: { index: [1, 1] }
+    slideshow: { index: [0, 1] }
 }
 
 export default createStore(

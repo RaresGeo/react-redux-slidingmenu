@@ -4,7 +4,7 @@ import { compareArray } from '../utility'
 
 import '../styles/styles.css';
 import '../styles/flex.css';
-import styles from '../styles/skills.module.css';
+import styles from '../styles/Skills.module.css';
 
 import Skill from './subcomponents/Skill'
 import Fade from './Fade'
@@ -38,7 +38,7 @@ const Skills = ({position}) => {
 
     return (
         <div className="container flex space-around items-center">
-            <div className={`${styles.skills} flex-col center bg-black fade-parent-skills`}>
+            <div className={`${styles.skills} flex-col center bg-black`}>
                     {
                         skills.fetched ? (
                             skillKeys.map( (skill, i) => {
@@ -52,7 +52,7 @@ const Skills = ({position}) => {
                                 )
                             })
                         ) : (
-                            <h1 className="loading">Loading ...</h1>
+                            <h1 className="loading">Loading...</h1>
                         )
                     }
             </div>

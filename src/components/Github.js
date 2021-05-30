@@ -27,7 +27,7 @@ const Github = ({ position }) => {
                                 <a href={user.html_url} className={`${styles.profileName} link`}><h1>{user.login}</h1></a>
                                 <p className={`${styles.bio}`}>{user.bio}</p>
                             </>
-                        ) : <h1 className="loading">Loading ...</h1>
+                        ) : <h1 className="loading">Loading...</h1>
                     }
                 </div>
 
@@ -39,7 +39,7 @@ const Github = ({ position }) => {
                                     <Repo name={repo.name} description={repo.description ? repo.description : "no description"} url={repo.html_url}/>
                                 </Fade>
                             ))
-                        ) : <h1 className="loading">Loading ...</h1>
+                        ) : <h1 className="loading">Loading...</h1>
                     }
                 </div>
             </div>

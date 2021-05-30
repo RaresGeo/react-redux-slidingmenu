@@ -1,6 +1,6 @@
 .skills {
-    width: 90%;
-    height: 75%;
+    width: 85%;
+    height: 85%;
     margin: 0 auto;
 }
 
@@ -53,7 +53,7 @@
     padding: 0.5rem 1rem;
     padding-left: .1em;
     font-family: 'Roboto', serif;
-    color: var(--teal);
+    color: var(--darkteal);
     font-size: 1.15vmax;
     margin: 0;
     padding: 0;
